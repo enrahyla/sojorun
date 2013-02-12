@@ -7,3 +7,5 @@
 <%= link_to " Delete ", article_path(@article), method: :delete, confirm: "are you sure?" %>
 
 <%= link_to "edit", edit_article_path(@article) %>
+
+<p>Tags: <%= tag_links(@article.tags) %></p>
