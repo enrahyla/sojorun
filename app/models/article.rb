@@ -1,8 +1,10 @@
 class Article < ActiveRecord::Base
-  attr_accessible :title, :body, :tag_list
+  attr_accessible :title, :body, :tag_list, :image
 
   has_many :taggings
   has_many :tags, through: :taggings
+
+  has_attached_file :image, styles: {medium: "300x300>", thumb: "100x100>"}
 
   def tag_list
     self.tags.collect do |tag|
