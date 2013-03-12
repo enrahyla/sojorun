@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+
+
+
   <title>Sojourn</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+
+  <%= yield :head %>
+
 </head>
 <body>
   <p class="flash">
@@ -26,3 +33,5 @@
   </div>
 </body>
 </html>
+
+<%= link_to image_tag('feed-icon-28x28.png'), articles_url(format: :atom) %>  
